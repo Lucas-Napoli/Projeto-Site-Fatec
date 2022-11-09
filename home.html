@@ -11,7 +11,7 @@
     <title>Site Fatec</title>
 </head>
 
-<body onload="verificarLogado()">
+<body onload="verificarLogado();obtemDados('pessoas')">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
@@ -69,7 +69,7 @@
                         <input type="hidden" name="id" id="id" />
                     </div>
 
-                    <button class="btn btn-success my-4 md-3 ">
+                    <button class="btn btn-success my-4 md-3 " onclick="salvar(event, 'pessoas')">
                         💾Salvar
                     </button>
                     <button class="btn btn-primary my-4 md-3">
@@ -78,9 +78,10 @@
                 </form>
             </div>
             <div class="col-md-8">
-                <h3 class="text-primary">
-                    🗒️Listagem de Pessoas
-                </h3>
+                <h3 class="text-primary">🗒️Listagem de Pessoas</h3>
+                <table id="tabelaDados" class="table table-bordered table-striped">
+                    <!-- Conteúdo do Firebase será carregado aqui-->
+                </table>
             </div>
         </div>
     </div>
@@ -96,8 +97,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
 
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
+
     <script src="script/firebase.js"></script>
     <script src="script/authentication.js"></script>
+    <script src="script/dados.js"></script>
 </body>
 
 </html>
